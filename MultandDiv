@@ -1,0 +1,44 @@
+import easygui
+tries = easygui.integerbox("How many pairs of questions do you want to answer?")
+n=tries
+tscore = 0
+
+while n > 0:
+    import random
+    import easygui
+    #def quizquest():
+    a = random.randrange(1,12)
+    b = random.randrange(1,12)
+    c= a * b
+    guess = easygui.integerbox("What is " + str(a) + " X "+ str(b) + "=")
+    g = guess
+    if g == c:
+        easygui.msgbox("Correct! " + str(a) + " X "+ str(b) + "=" + str(c))
+        tscore = tscore + 1
+    else: easygui.msgbox("Wrong. " + str(a) + " X "+ str(b) + '=' + str(c))
+    n = n-1
+easygui.msgbox ('You have answered ' + str(tscore) + ' of ' + str(tries) + ' multiplication questions correctly.')
+n = tries
+dscore = 0
+easygui.msgbox('Now let us practice ' + str(tries) + ' division questions.')
+while n > 0:
+    import easygui
+    import random
+    #def quizquest():
+    a = random.randrange(1,12)
+    b = random.randrange(1,12)
+    c= b * a
+    guess = easygui.integerbox('What is '+ str(c) + '/' + str(b) + '=')
+    g = guess
+    if g == a:
+        easygui.msgbox ('Correct! ' + str(c) + '/' + str(b) + '=' + str(a))
+        dscore = dscore + 1
+    else: easygui.msgbox('Wrong. ' + str(c) + '/' + str(b) + '=' + str(a))
+    n = n-1
+import easygui
+easygui.msgbox ('You have answered '+ str(dscore) + ' of ' + str(tries) + ' division questions correctly.')
+score = tscore + dscore
+Ttries = tries*2
+import easygui
+easygui.msgbox ('You answered a total of ' + str(score) + ' out of ' + str(Ttries) + ' questions correctly!' )
+easygui.ccbox
